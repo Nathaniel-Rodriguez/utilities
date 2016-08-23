@@ -1,4 +1,4 @@
-import numpy as npy
+import numpy as np
 
 def log_linspace(start, stop, number):
     """
