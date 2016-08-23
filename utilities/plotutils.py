@@ -33,5 +33,13 @@ def generate_color(index, loop_size=12, colormap=cm.Set1):
 
     return colormap((index%12 + index/12)*256 / loop_size)
 
+def bayes_mvs_wrapper(sequence, alpha):
+
+    if max(sequence) == min(sequence):
+        return (np.mean(sequence), (np.mean(sequence), np.mean(sequence))), (0, (0,0)), (0, (0,0))
+    else:
+
+        return bayes_mvs(sequence, alpha)
+
 if __name__ == '__main__':
     pass

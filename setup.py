@@ -7,6 +7,7 @@ setup(name='utilities',
     packages=['utilities'],
     url='https://github.com/Nathaniel-Rodriguez/utilities.git',
     install_requires = [
+        'scipy',
     	'numpy',
     	'matplotlib',
     	'networkx'],

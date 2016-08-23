@@ -10,6 +10,7 @@ from .plotutils import ecdf
 from .plotutils import eccdf
 from .plotutils import plot_ccdf
 from .plotutils import generate_color
+from .plotutils import bayes_mvs_wrapper
 from .circuitutils import get_communities
 from .circuitutils import get_community_node_dict
 from .circuitutils import get_bridge_dict
