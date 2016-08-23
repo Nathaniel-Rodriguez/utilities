@@ -25,3 +25,4 @@ from .circuitutils import community_weight_fraction
 from .circuitutils import node_weight_dict
 from .circuitutils import node_strength_list
 from .circuitutils import global_node_weight_dict
+from .mathutils import log_linspace
