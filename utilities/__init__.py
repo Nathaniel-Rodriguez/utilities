@@ -10,7 +10,6 @@ from .plotutils import ecdf
 from .plotutils import eccdf
 from .plotutils import plot_ccdf
 from .plotutils import generate_color
-from .plotutils import bayes_mvs_wrapper
 from .circuitutils import get_communities
 from .circuitutils import get_community_node_dict
 from .circuitutils import get_bridge_dict
@@ -26,3 +25,4 @@ from .circuitutils import node_weight_dict
 from .circuitutils import node_strength_list
 from .circuitutils import global_node_weight_dict
 from .mathutils import log_linspace
+from .mathutils import bayes_mvs_wrapper

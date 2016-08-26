@@ -1,4 +1,13 @@
 import numpy as np
+from scipy.stats import bayes_mvs
+
+def bayes_mvs_wrapper(sequence, alpha):
+
+    if max(sequence) == min(sequence):
+        return (np.mean(sequence), (np.mean(sequence), np.mean(sequence))), (0, (0,0)), (0, (0,0))
+    else:
+
+        return bayes_mvs(sequence, alpha)
 
 def log_linspace(start, stop, number):
     """
