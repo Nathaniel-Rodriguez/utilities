@@ -3,11 +3,19 @@ import matplotlib.cm as cm
 import numpy as np
 
 def ecdf(data):
+    
+    data = np.sort(data)
+    size = float(len(data))
+    all_unique = not( any( data[:-1]==data[1:] ) )
+    if all_unique:
+        cdf = np.array([ i / size for i in range(0,len(data)) ])
+    else:
+        cdf = np.searchsorted(data, data,side='left')/size
+        unique_data, unique_indices = np.unique(data, return_index=True)
+        data=unique_data
+        cdf = cdf[unique_indices]
 
-    sorted_data = np.sort(data)
-    size = float(len(sorted_data))
-    cdf = np.array([ i / size for i in xrange(1,len(sorted_data)+1) ])
-    return sorted_data, cdf
+    return data, cdf
 
 def eccdf(data):
 
@@ -18,7 +26,7 @@ def plot_ccdf(prefix, data, xlabel='', x_log=False, y_log=False):
 
     x, y = eccdf(data)
     plt.clf()
-    plt.plot(x, y, 'bo')
+    plt.plot(x, y, 'b-')
     if x_log == True: plt.xscale('log')
     if y_log == True: plt.yscale('log')
     plt.ylabel('CCDF')
