@@ -26,7 +26,7 @@ def plot_ccdf(prefix, data, xlabel='', x_log=False, y_log=False):
 
     x, y = eccdf(data)
     plt.clf()
-    plt.plot(x, y, 'b-')
+    plt.plot(x, y, 'bo')
     if x_log == True: plt.xscale('log')
     if y_log == True: plt.yscale('log')
     plt.ylabel('CCDF')
