@@ -22,18 +22,20 @@ def eccdf(data):
     sorted_data, cdf = ecdf(data)
     return sorted_data, 1. - cdf
 
-def plot_ccdf(prefix, data, xlabel='', x_log=False, y_log=False):
+def plot_ccdf(data, xlabel='', x_log=False, y_log=False, savefile=True, prefix='test',
+    marker='o', linestyle='-', color='b'):
 
     x, y = eccdf(data)
     plt.clf()
-    plt.plot(x, y, 'bo')
+    plt.plot(x, y, marker=marker, linestyle=linestyle, color=color)
     if x_log == True: plt.xscale('log')
     if y_log == True: plt.yscale('log')
     plt.ylabel('CCDF')
     plt.xlabel(xlabel)
-    plt.savefig(prefix + '.png', dpi=300)
-    plt.clf()
-    plt.close()
+    if savefile:
+        plt.savefig(prefix + '.png', dpi=300)
+        plt.clf()
+        plt.close()
 
 def generate_color(index, loop_size=12, colormap=cm.Set1):
     """

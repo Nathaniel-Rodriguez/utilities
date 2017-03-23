@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import bayes_mvs
 
-def bayes_mvs_wrapper(sequence, alpha):
+def bayes_mvs_wrapper(sequence, alpha=0.9):
 
     if max(sequence) == min(sequence):
         return (np.mean(sequence), (np.mean(sequence), np.mean(sequence))), (0, (0,0)), (0, (0,0))
