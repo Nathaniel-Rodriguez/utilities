@@ -9,3 +9,6 @@
 
 # Sublime project file
 *.sublime*
+
+# remove cache files
+/*__pycache__
