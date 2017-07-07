@@ -26,3 +26,4 @@ from .circuitutils import node_strength_list
 from .circuitutils import global_node_weight_dict
 from .mathutils import log_linspace
 from .mathutils import bayes_mvs_wrapper
+from .mathutils import estimate_beta_distribution_parameters
